@@ -8,40 +8,43 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="split">
-      <div id="split-0"></div>
-      <div id="split-1"></div>
-      <div id="split-2"></div>
+    <div class="split" id="split-0">
+      <div id="split-0-0"></div>
+      <div id="split-0-1"></div>
+    </div>
+    <div class="split" id="split-1">
+      <div id="split-1-0"></div>
+      <div id="split-1-1"></div>
     </div>
     <script type="module">
       import "https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js";
-      let currentlyResizedSplit = undefined;
 
       const Split = window.Split;
-      Split(["#split-0", "#split-1", "#split-2"], {
+      Split(["#split-0-0", "#split-0-1"], {
         onDrag: (sizes) => {
-          if (currentlyResizedSplit === "split-1") {
-            document.getElementById("split-2").style.width =
-              document.getElementById("split-0").style.width;
-          } else {
-            document.getElementById("split-0").style.width =
-              document.getElementById("split-2").style.width;
-          }
-        },
-        gutter: (index) => {
-          const gutter = document.createElement("div");
-          gutter.className = "gutter gutter-horizontal";
-          gutter.id = `gutter-${index}`;
-          return gutter;
+          const leftSideWidth =
+            document.getElementById("split-0-1").clientWidth;
+          document.getElementById(
+            "split-1-0"
+          ).style.width = `${leftSideWidth}px`;
+          document.getElementById(
+            "split-1-1"
+          ).style.width = `calc(100% - ${leftSideWidth}px - 5px)`;
         },
       });
 
-      document.getElementById("gutter-1").onmousedown = () => {
-        currentlyResizedSplit = "split-1";
-      };
-      document.getElementById("gutter-2").onmousedown = () => {
-        currentlyResizedSplit = "split-2";
-      };
+      Split(["#split-1-0", "#split-1-1"], {
+        onDrag: (sizes) => {
+          const rightSideWidth =
+            document.getElementById("split-1-0").clientWidth;
+          document.getElementById(
+            "split-0-1"
+          ).style.width = `${rightSideWidth}px`;
+          document.getElementById(
+            "split-0-0"
+          ).style.width = `calc(100% - ${rightSideWidth}px - 5px)`;
+        },
+      });
     </script>
   </body>
 </html>

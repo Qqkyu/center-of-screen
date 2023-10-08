@@ -4,20 +4,19 @@ body {
   height: 100%;
 }
 
-#screen-center {
-  height: 100%;
-  width: 10px;
-  background-color: #eee;
-  position: absolute;
+body {
+  display: flex;
 }
 
 .split {
   height: 100%;
+  flex-basis: 50%;
   display: flex;
   flex-direction: row;
 }
 
-#split-1 {
+#split-0-1,
+#split-1-0 {
   background-color: gray;
 }
 
