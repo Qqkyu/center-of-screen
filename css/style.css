@@ -8,6 +8,12 @@ body {
   display: flex;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #2a303c;
+  }
+}
+
 .split {
   height: 100%;
   flex-basis: 50%;
@@ -17,7 +23,7 @@ body {
 
 #split-0-1,
 #split-1-0 {
-  background-color: gray;
+  background-color: #6419e6;
 }
 
 .split > div {
