@@ -31,3 +31,15 @@ Split(["#split-1-0", "#split-1-1"], {
     ).style.width = `calc(100% - ${rightSideWidth}px - ${gutterSize / 2}px)`;
   },
 });
+
+const fullscreenBtn = document.getElementById("fullscreen-button");
+
+fullscreenBtn.addEventListener("click", () => {
+  if (document.fullscreenElement == null) {
+    fullscreenBtn.innerText = "Exit fullscreen";
+    document.body.requestFullscreen();
+  } else {
+    fullscreenBtn.innerText = "Enter fullscreen";
+    document.exitFullscreen();
+  }
+});
