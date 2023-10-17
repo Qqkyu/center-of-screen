@@ -51,8 +51,10 @@ document.addEventListener("fullscreenchange", () => {
   if (document.fullscreenElement) {
     enterFullscreenImg.style.display = "none";
     exitFullscreenImg.style.display = "block";
+    fullscreenBtn.title = "Exit fullscreen mode";
   } else {
     enterFullscreenImg.style.display = "block";
     exitFullscreenImg.style.display = "none";
+    fullscreenBtn.title = "Open fullscreen mode";
   }
 });
