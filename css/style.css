@@ -6,12 +6,7 @@ body {
 
 body {
   display: flex;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #2a303c;
-  }
+  background: #373f51;
 }
 
 .split {
@@ -23,7 +18,7 @@ body {
 
 #split-0-1,
 #split-1-0 {
-  background-color: #6419e6;
+  background-color: #a9bcd0;
 }
 
 .split > div {
@@ -31,7 +26,7 @@ body {
 }
 
 .gutter {
-  background-color: #eee;
+  background-color: #58a4b0;
   background-repeat: no-repeat;
   background-position: 50%;
 }
