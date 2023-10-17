@@ -35,11 +35,18 @@ Split(["#split-1-0", "#split-1-1"], {
 const fullscreenBtn = document.getElementById("fullscreen-button");
 
 fullscreenBtn.addEventListener("click", () => {
+  const enterFullscreenImg = fullscreenBtn.querySelector(
+    "#enter-fullscreen-img"
+  );
+  const exitFullscreenImg = fullscreenBtn.querySelector("#exit-fullscreen-img");
+
   if (document.fullscreenElement == null) {
-    fullscreenBtn.innerText = "Exit fullscreen";
+    enterFullscreenImg.style.display = "none";
+    exitFullscreenImg.style.display = "block";
     document.body.requestFullscreen();
   } else {
-    fullscreenBtn.innerText = "Enter fullscreen";
+    enterFullscreenImg.style.display = "block";
+    exitFullscreenImg.style.display = "none";
     document.exitFullscreen();
   }
 });
