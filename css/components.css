@@ -1,9 +1,8 @@
 .button {
-  background-color: #ffffff;
-  border: 1px solid rgb(209, 213, 219);
+  background-color: #d8dbe2;
+  border: 2px solid transparent;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  color: #111827;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
@@ -14,12 +13,13 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   cursor: pointer;
   user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
+  transition: background-color 0.2s;
 }
 
 .button:hover {
-  background-color: rgb(249, 250, 251);
+  background-color: #a9bcd0;
+  border-color: #d8dbe2;
 }
 
 .button:focus {
