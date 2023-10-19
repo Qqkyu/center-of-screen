@@ -18,7 +18,56 @@ body {
 
 #split-0-1,
 #split-1-0 {
+  position: relative;
   background-color: #a9bcd0;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #373f51;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #373f51;
+}
+
+#split-0-1::after {
+  content: "";
+  border-bottom: 1px solid #373f51;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 2px;
+}
+
+#split-0-1 > #px-arrow-left {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+}
+
+#split-1-0::after {
+  content: "";
+  border-bottom: 1px solid #373f51;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: 2px;
+}
+
+#split-1-0 > #px-arrow-right {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
 }
 
 .split > div {
@@ -40,4 +89,9 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+#px-arrow {
+  position: absolute;
+  inset: 50%;
 }
