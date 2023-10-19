@@ -22,7 +22,7 @@ body {
   height: 24px;
 }
 
-@container split-0-1 (min-width: 100px) {
+@container split-0-1 (min-width: 50px) {
   #sizes-list {
     width: 100px;
     right: -50px;
