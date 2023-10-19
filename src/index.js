@@ -3,7 +3,7 @@ import "https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js";
 const Split = window.Split;
 
 const gutterSize = 10;
-const minSize = 0;
+const minSize = 20;
 const snapOffset = 0;
 
 Split(["#split-0-0", "#split-0-1"], {
