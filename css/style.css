@@ -9,11 +9,37 @@ body {
   background: #373f51;
 }
 
+#sizes-list {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  right: -20px;
+}
+
+#px-size {
+  width: 100%;
+  text-align: center;
+  height: 24px;
+}
+
+@container split-0-1 (min-width: 100px) {
+  #sizes-list {
+    width: 100px;
+    right: -50px;
+  }
+}
+
 .split {
   height: 100%;
   flex-basis: 50%;
   display: flex;
   flex-direction: row;
+}
+
+#split-0-1 {
+  container-type: inline-size;
+  container-name: split-0-1;
+  z-index: 1;
 }
 
 #split-0-1,

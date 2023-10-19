@@ -12,6 +12,7 @@ Split(["#split-0-0", "#split-0-1"], {
   gutterSize,
   onDrag: () => {
     const leftSideWidth = document.getElementById("split-0-1").clientWidth;
+    document.getElementById("px-size").innerText = `${leftSideWidth} px`;
     document.getElementById("split-1-0").style.width = `${leftSideWidth}px`;
     document.getElementById(
       "split-1-1"
@@ -25,6 +26,7 @@ Split(["#split-1-0", "#split-1-1"], {
   gutterSize,
   onDrag: () => {
     const rightSideWidth = document.getElementById("split-1-0").clientWidth;
+    document.getElementById("px-size").innerText = `${rightSideWidth} px`;
     document.getElementById("split-0-1").style.width = `${rightSideWidth}px`;
     document.getElementById(
       "split-0-0"
@@ -57,4 +59,9 @@ document.addEventListener("fullscreenchange", () => {
     exitFullscreenImg.style.display = "none";
     fullscreenBtn.title = "Open fullscreen mode";
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sideWidth = document.getElementById("split-0-1").clientWidth;
+  document.getElementById("px-size").innerText = `${sideWidth} px`;
 });
