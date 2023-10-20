@@ -14,11 +14,21 @@ body {
   top: 50%;
   width: 40px;
   right: -20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
 }
 
 #px-size {
-  width: 100%;
-  text-align: center;
+  margin: 0;
+  height: 24px;
+}
+
+#cm-size {
+  margin: 0;
   height: 24px;
 }
 

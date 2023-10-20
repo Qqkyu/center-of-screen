@@ -6,6 +6,10 @@ const gutterSize = 10;
 const minSize = 20;
 const snapOffset = 0;
 
+function convertPxToCm(px) {
+  return Math.round(((px * window.devicePixelRatio * 2.54) / 96) * 100) / 100;
+}
+
 Split(["#split-0-0", "#split-0-1"], {
   minSize,
   snapOffset,
@@ -13,6 +17,9 @@ Split(["#split-0-0", "#split-0-1"], {
   onDrag: () => {
     const leftSideWidth = document.getElementById("split-0-1").clientWidth;
     document.getElementById("px-size").innerText = `${leftSideWidth * 2} px`;
+    document.getElementById("cm-size").innerText = `${convertPxToCm(
+      leftSideWidth * 2
+    )} cm`;
     document.getElementById("split-1-0").style.width = `${leftSideWidth}px`;
     document.getElementById(
       "split-1-1"
@@ -27,6 +34,9 @@ Split(["#split-1-0", "#split-1-1"], {
   onDrag: () => {
     const rightSideWidth = document.getElementById("split-1-0").clientWidth;
     document.getElementById("px-size").innerText = `${rightSideWidth * 2} px`;
+    document.getElementById("cm-size").innerText = `${convertPxToCm(
+      rightSideWidth * 2
+    )} cm`;
     document.getElementById("split-0-1").style.width = `${rightSideWidth}px`;
     document.getElementById(
       "split-0-0"
@@ -64,4 +74,7 @@ document.addEventListener("fullscreenchange", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const sideWidth = document.getElementById("split-0-1").clientWidth;
   document.getElementById("px-size").innerText = `${sideWidth * 2} px`;
+  document.getElementById("cm-size").innerText = `${convertPxToCm(
+    sideWidth * 2
+  )} cm`;
 });
