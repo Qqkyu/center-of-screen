@@ -15,4 +15,5 @@ body {
 body {
   display: flex;
   background: var(--charcoal);
+  font-family: "Roboto", sans-serif;
 }
