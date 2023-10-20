@@ -1,5 +1,5 @@
 .button {
-  background-color: #d8dbe2;
+  background-color: var(--gainsboro);
   border: 2px solid transparent;
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -7,10 +7,6 @@
   font-weight: 600;
   line-height: 1.25rem;
   padding: 0.5rem 0.75rem;
-  text-align: center;
-  text-decoration: none #d1d5db solid;
-  text-decoration-thickness: auto;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
@@ -18,8 +14,8 @@
 }
 
 .button:hover {
-  background-color: #a9bcd0;
-  border-color: #d8dbe2;
+  background-color: var(--pastel-blue);
+  border-color: var(--gainsboro);
 }
 
 .button:focus {
