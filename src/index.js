@@ -67,10 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setSizeMeters(px) {
+  const centimeres = convertPxToCm(px);
+  const inches = convertCmToIn(centimeres);
   document.getElementById("px-size").innerText = `${px} px`;
-  document.getElementById("cm-size").innerText = `${convertPxToCm(px)} cm`;
+  document.getElementById("cm-size").innerText = `${centimeres} cm`;
+  document.getElementById("in-size").innerText = `${inches} in`;
 }
 
 function convertPxToCm(px) {
   return Math.round(((px * window.devicePixelRatio * 2.54) / 96) * 100) / 100;
+}
+
+function convertCmToIn(cm) {
+  return Math.round((cm / 2.54) * 100) / 100;
 }
