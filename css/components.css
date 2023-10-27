@@ -11,18 +11,18 @@
   user-select: none;
   touch-action: manipulation;
   transition: background-color 0.2s;
-}
 
-.button:hover {
-  background-color: var(--pastel-blue);
-  border-color: var(--gainsboro);
-}
+  &:hover {
+    background-color: var(--pastel-blue);
+    border-color: var(--gainsboro);
+  }
 
-.button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
 
-.button:focus-visible {
-  box-shadow: none;
+  &:focus-visible {
+    box-shadow: none;
+  }
 }
